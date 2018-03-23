@@ -30,7 +30,8 @@ _listen = function(event)
     }
     return bwArray
 };
-
+/* I think that this is all bullocks but hopefully github will allow me access to edit and then everything will be fine and dandy in the world.
+*/
 /**
  * Your header documentation here for clear
  */
