@@ -44,7 +44,9 @@ clear = function()
  hi*/
 translate = function()
 {
-	// your code here
+	// Creating the tap code array
+	let array = [["e", "t", "a", "n", "d"],["o", "i", "r", "u", "c"],["s", "h", "m", "f", "p"],
+		     ["l", "y", "g", "v", "j"], ["w", "b", "x", "q", "z"]];
 
     /*
     table =
