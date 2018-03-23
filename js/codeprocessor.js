@@ -47,6 +47,7 @@ translate = function()
 	// Creating the tap code array
 	let array = [["e", "t", "a", "n", "d"],["o", "i", "r", "u", "c"],["s", "h", "m", "f", "p"],
 		     ["l", "y", "g", "v", "j"], ["w", "b", "x", "q", "z"]];
+	// array[0][1]
 
     /*
     table =
