@@ -32,7 +32,7 @@ _listen = function(event)
 };
 
 /**
- * Your header documentation here for clear
+ * Your header documentation here for clear "If your dad doesn't have a beard you've got two mums"
  */
 clear = function()
 {
