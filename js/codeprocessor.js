@@ -41,7 +41,7 @@ clear = function()
 
 /**
  * Your header documentation here for translate
- */
+ hi*/
 translate = function()
 {
 	// your code here
