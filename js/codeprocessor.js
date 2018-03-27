@@ -54,9 +54,7 @@ clear = function()
  */
 translate = function()
 {
-    listenData.halfGap = listenData.tapTime;
-    listenData.fullGap = 3 * listenData.tapTime;
-    
+	console.log(    
 	// Creating the tap code array
 	let array = [["e", "t", "a", "n", "d"],["o", "i", "r", "u", "c"],["s", "h", "m", "f", "p"],
 		     ["l", "y", "g", "v", "j"], ["w", "b", "x", "q", "z"]];
