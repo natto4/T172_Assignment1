@@ -55,6 +55,41 @@ translate = function()
 
     }
     */
+//step 5 below
+//input is starCode
+//check if each value is a * or a space
+
+let j=0,count,number;
+while(j<=starCode.length)
+{
+  if (starCode.charAt(j)== "*")
+  {
+    count++
+  }
+  else
+  {
+    number += count.toString()-1;
+  }
+  j++;
+}
+for(h=0;h<=count.length;h=h+2)
+{
+  letters += array[count[h],count[h+1]]
+}
+/*
+for(h=0;h<=count.length;h=h+2)
+{
+  if(count[h]==1)
+  {
+    if(count[h+1]==1)
+    {
+      letters +=
+    }
+  }
+}
+*/
+//output is letters
+//step 5 above, step 7 below
     let i,space=[], k=[];
     for(i==0;i<=letters.length-2,i++) //letters is the outputted array of letters
     {
@@ -70,5 +105,5 @@ translate = function()
         k.push(i)
       }
     }
-    
+
 };
