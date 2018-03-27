@@ -59,22 +59,23 @@ translate = function()
 //input is starCode
 //check if each value is a * or a space
 
-let j=0,count,number;
+let j=0,count=0,number;
 while(j<=starCode.length)
 {
-  if (starCode.charAt(j)== "*")
+  if (starCode.charAt(j)== "*")//checking if character j is a star or not
   {
-    count++
+    count++//adding to the count
   }
-  else
+  else//if it is not a star, count will be output to variable number as a series of numbers, denoting the length of each chain of stars
   {
-    number += count.toString()-1;
+    number += (count-1).toString();//minus 1 so that 1 star will refer to the 0th row/column instead of the 1st.
+    count = 0;//resetting count to 0 for the next string of stars.
   }
-  j++;
+  j++;//moving to the next character
 }
-for(h=0;h<=count.length;h=h+2)
+for(h=0;h<=number.length;h=h+2)//each loop reads two sets of values from the array number
 {
-  letters += array[count[h],count[h+1]]
+  letters += array[number[h]][number[h+1]]
 }
 /*
 for(h=0;h<=count.length;h=h+2)
@@ -102,7 +103,7 @@ for(h=0;h<=count.length;h=h+2)
     {
       if(msg[i]+msg[i+1] == "qc")
       {
-        k.push(i)
+        k.push(i);
       }
     }
 
