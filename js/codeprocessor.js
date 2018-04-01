@@ -9,12 +9,13 @@ var listenData = {
     blackWhite: [0],
     timeTaken: [0],
 };
+var time1 = 0, time2 = 0;
 
 _listen = function(event)
 {
 
-    let  gsArray,bwArray; //gsArray is the greyscale array, bwArray is the black and white array
-    for (var i=0;i<=(event.detail.data.length)/4;i++)//finding the greyscale translation of the RGBA data
+    let  gsArray = [],bwArray = []; //gsArray is the greyscale array, bwArray is the black and white array
+    for (var i=0;i<(event.detail.data.length)/4;i++)//finding the greyscale translation of the RGBA data
      {
         gsArray[i] = (event.detail.data[0+4*i]+event.detail.data[1+4*i]+event.detail.data[2+4*i])/3;
         //variable i represents each set of four numbers,
@@ -28,13 +29,11 @@ _listen = function(event)
     {
         var total = 0;
         total = total + gsArray[i]
-        
-        var greyAverage = total/100
+    }
 
 
     
-    var time1 = 0, time2 = 0;
-    if(greyAverage > 127.5 && listenData.blackWhite[listenData.blackwhite.length-1]===0) //was black and is now white
+    if(total > 127.5 && listenData.blackWhite[listenData.blackWhite.length-1]===0) //was black and is now white
         {
             listenData.blackWhite.push(1); //record that image is now white
             
@@ -46,7 +45,7 @@ _listen = function(event)
             } 
         }
     
-    else if(greyAverage < 127.5 && listenData.blackWhite[listenData.blackWhite.length-1]===1) //was white and is now black
+    else if(total < 127.5 && listenData.blackWhite[listenData.blackWhite.length-1]===1) //was white and is now black
         {
             listenData.blackWhite.push(0); //record that image is now black 
             time2 = event.timeStamp; //Record time
@@ -54,8 +53,6 @@ _listen = function(event)
         }
 
     return listenData
-    
-    
 };
 
 /**
