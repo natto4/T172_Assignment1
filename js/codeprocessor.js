@@ -36,7 +36,12 @@ _listen = function(event)
  */
 clear = function()
 {
-	// your code here
+	listenData =
+        	{
+        	blackWhite: [0],
+        	timeTaken: [0],
+        	}
+    	time1 = 0, time2 = 0;
 };
 
 /**
@@ -109,6 +114,12 @@ for(i=0;i<=number.length-2;i=i+2) //each loop reads two sets of values from the 
   	letters += array[number[i]][number[i+1]];
 }
 
+	
+let rxCodeOutput = document.getElementById("rx-code");
+    rxCodeOutput.innerHTML = starCode;
+
+let rxTranslatedOutput = document.getElementById("rx-translated");
+    rxTranslatedOutput.innerHTML = output;
 	
 	
 	
