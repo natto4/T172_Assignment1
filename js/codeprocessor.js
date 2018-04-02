@@ -43,18 +43,7 @@ clear = function()
  * Your header documentation here for translate
  hi*/
 translate = function()
-{
-	// Creating the tap code array
-	let array = [["e", "t", "a", "n", "d"],["o", "i", "r", "u", "c"],["s", "h", "m", "f", "p"],
-		     ["l", "y", "g", "v", "j"], ["w", "b", "x", "q", "z"]];
-	// array[0][1]
 
-    /*
-    table =
-    {
-
-    }
-    */
 	
 	
 ///step 4 and 6 
@@ -84,17 +73,41 @@ while (i <= datatT.length) {
     console.log("early termination");
   
     }
-    else if (databW[i] == 1){ 
+    else if (databW[i] == 1)
+    { 
     starCode += "*";
     }
      
    }
-
-
 i++;
 
 }
-; 
+{
+// Creating the tap code array
+let array = [["e", "t", "a", "n", "d"],["o", "i", "r", "u", "c"],["s", "h", "m", "f", "p"],
+		["l", "y", "g", "v", "j"], ["w", "b", "x", "q", "z"]];
+	// e.g. array[0][1] is "e"
+
+let j=0,count=0,number = [];
+while(j<=starCode.length)
+{
+	if (starCode.charAt(j)=== "*")//checking if character j is a star or not
+ 	{
+      		count++;//adding to the count
+  	}
+  	else//if it is not a star, count will be output to variable number as a series of numbers, denoting the length of each chain of stars
+  	{
+      		number.push(count-1);//minus 1 so that 1 star will refer to the 0th row/column instead of the 1st.
+      		count = 0;//resetting count to 0 for the next string of stars.
+  	}
+  	j++;//moving to the next character
+}
+let i, letters = "";
+
+for(i=0;i<=number.length-2;i=i+2) //each loop reads two sets of values from the array number
+{
+  	letters += array[number[i]][number[i+1]];
+}
 
 	
 	
