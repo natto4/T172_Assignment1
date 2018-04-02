@@ -122,7 +122,36 @@ let rxTranslatedOutput = document.getElementById("rx-translated");
     rxTranslatedOutput.innerHTML = output;
 	
 	
-	
+//
+	//still need to integrate the code
+	let letters = "testingwuwwithwuwwordswuwoqc"; 
+let output="";
+
+for(let i=0;i<letters.length;i++) //letters is the outputted array of letters
+   { 
+      if(letters.charAt(i)+letters.charAt(i+1)+letters.charAt(i+2)== "wuw")
+      {
+		  i++;
+		  i++;
+		  output+=" ";
+		  
+	 }
+    else if ( letters.charAt(i)+letters.charAt(i+1)== "qc")
+      {
+   		i++;
+		output+="k";
+      }
+ 
+	else
+	{
+		output+=letters[i];
+	}
+}
+    
+    
+outputAreaRef.innerHTML= output;
+
+
 	
 };
 
