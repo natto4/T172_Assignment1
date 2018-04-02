@@ -60,36 +60,3 @@ translate = function()
 
 
 
-//step 4 and 6
-
-let datatT = listenData.timeTaken;
-let dataunit = datatT[1];
-let databW = listenData.blackWhite;
-
-let i = 1;
-console.log(dataunit);
-let starCode = "";
-while (i <= datatT.length) {
-   if (databW[i]===0 && datatT[i]== dataunit){
-  starCode += ""; //this is a halfgap
-  }
-  else if (databW[i]===0 && Math.round(datatT[i]%dataunit) === 0){
-    starCode +=" ";
-  }
-  
-  else {
-    if ((i == datatT.length) && (databW[i-1]== 1))
-    {
-    alert("Early termination detected. Refresh.");
-  
-    }
-    else if (databW[i] == 1){ 
-    starCode += "*";
-    }
-     
-   }
-
-
-i++;
-
-}
