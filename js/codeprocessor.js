@@ -55,6 +55,51 @@ translate = function()
 
     }
     */
+	
+	
+///step 4 and 6 
+let datatT = listenData.timeTaken;
+let dataunit = datatT[1]; // data unit is the time of 1 tap. The time of one tap is the unit of measurement as 
+	// half gap = time of 1 tap, full gap = time of 3 taps. It is taken at the 2nd element of the datatT array as the first element
+	// should be describing a gap of an abitrary length of time. 
+let databW = listenData.blackWhite;
+
+let i = 1;
+console.log(dataunit);
+let starCode = "";
+while (i <= datatT.length) {
+   if (databW[i]===0 && datatT[i]== dataunit){
+  starCode += ""; //this is a halfgap
+  }
+  else if (databW[i]===0 && Math.round(datatT[i]%dataunit) === 0){
+	  //javascript doesn't work well with floating points so we can't do *3 but instead must do the rounded
+	  //remainder when divided by the dataunit
+    starCode +=" ";
+  } 
+  
+  else {
+    if ((i == datatT.length) && (databW[i-1]== 1)) //if the last element of databW is 1 an early termination alert will show
+    {
+    alert("Early termination detected. Refresh.");
+    console.log("early termination");
+  
+    }
+    else if (databW[i] == 1){ 
+    starCode += "*";
+    }
+     
+   }
+
+
+i++;
+
+}
+; 
+
+	
+	
+	
+	
 };
 
 
