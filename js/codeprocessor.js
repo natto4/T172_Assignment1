@@ -5,13 +5,15 @@
  *   	event.detail.data and the timestamp in event.timeStamp
  */
 
-var listenData = {
+var listenData = 
+{
   blackWhite: [0],
   timeTaken: [0],
 };
 var time1 = 0, time2 = 0;
 
-_listen = function (event) {
+_listen = function (event) 
+{
 
   let gsArray = [], bwArray = []; //gsArray is the greyscale array, bwArray is the black and white array
   for (var i = 0; i < (event.detail.data.length) / 4; i++)//finding the greyscale translation of the RGBA data
@@ -58,7 +60,8 @@ _listen = function (event) {
 /**
 * Your header documentation here for clear
 */
-clear = function () {
+clear = function ()
+{
   listenData =
     {
       blackWhite: [0],
@@ -80,25 +83,30 @@ translate = function () {
   let i = 1;
   console.log(dataunit);
   let starCode = "";
-  while (i <= datatT.length) {
-    if (databW[i] === 0 && datatT[i] == dataunit) {
+  while (i <= datatT.length) 
+  {
+    if (databW[i] === 0 && datatT[i] == dataunit)
+    {
       starCode += ""; //this is a halfgap
     }
-    else if (databW[i] === 0 && datatT[i] > 2 * dataunit) {
+    else if (databW[i] === 0 && datatT[i] > 2 * dataunit) 
+    {
       console.log("fullgap")
       starCode += " ";
       //javascript doesn't work well with floating points so we can't do *3 but instead must do the rounded
       //remainder when divided by the dataunit
     }
 
-    else {
+    else 
+    {
       if ((i == datatT.length) && (databW[i] == 1)) //if the last element of databW is 1 an early termination alert will show
       {
         alert("Early termination detected. Refresh.");
         console.log("early termination");
       }
 
-      else if (databW[i] == 1) {
+      else if (databW[i] == 1) 
+      {
         starCode += "*";
       }
 
@@ -120,7 +128,8 @@ translate = function () {
   //check if each value is a * or a space
 
   let j = 0, count = 0, number = [];
-  while (j <= starCode.length) {
+  while (j <= starCode.length)
+  {
     if (starCode.charAt(j) === "*")//checking if character j is a star or not
     {
       count++;//adding to the count
@@ -144,19 +153,22 @@ translate = function () {
 
   for (let h = 0; h < letters.length; h++) //letters is the outputted array of letters
   {
-    if (letters.charAt(h) + letters.charAt(h + 1) + letters.charAt(h + 2) == "wuw") {
+    if (letters.charAt(h) + letters.charAt(h + 1) + letters.charAt(h + 2) == "wuw")
+    {
       h++;
       h++;
       output += " ";
     }
 
 
-    else if (letters.charAt(h) + letters.charAt(h + 1) == "qc") {
+    else if (letters.charAt(h) + letters.charAt(h + 1) == "qc") 
+    {
       h++;
       output += "k";
     }
 
-    else {
+    else 
+    {
       output += letters[h];
     }
   }
