@@ -69,11 +69,6 @@ clear = function ()
     }
   time1 = 0, time2 = 0;
 };
-  let rxCodeOutput = document.getElementById("rx-code");
-  rxCodeOutput.innerHTML = "";
-
-  let rxTranslatedOutput = document.getElementById("rx-translated");
-  rxTranslatedOutput.innerHTML = "";
 
 /**
 * Your header documentation here for translate
