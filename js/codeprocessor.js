@@ -18,7 +18,7 @@ var time1 = 0, time2 = 0;
 This function interprets data recieved from the camera and turns the flashes into two data arrays: blackWhite and timeTaken
 It does this by first translating the image into greyscale by translating the RGBA data for each pixel. 
 
-argument: event: holds an Event object with the pixels in	event.detail.data and the timestamp in event.timeStampsquare
+argument: event: holds an Event object with the pixels in event.detail.data and the timestamp in event.timeStampsquare
 
 preconditions: 
       image must exist as a 400 x 400 pixel array
@@ -101,20 +101,21 @@ clear = function ()
 };
 
 /**
-This function...
+This function analyses the data gathered from the listen function in order to produce a string of letters translated 
+from the taps and gaps of the transmitted message. It does this by identifying the tap, half-gap and gap time periods as multiples
+of the tap time length. Using these identifiers it creates the corresponding starCode string. The starCode string is then decoded 
+into the final message using the tap code array of letters. The starCode and final message are then displayed in the appropriate
+areas of the app. 
 
 argument: this function does not take any arguments
 preconditions: 
       blackWhite and timeTaken arrays must be of equal type
       array length of timeTaken must be one less than the array length of blackWhite
+      second element in the timeTaken data is the time of a tap and correlates to a 1 in the corresponding blackWhite array.
 /////////postcondition?
 return:
       variable output is of string type 
       output is the translated encoded message
-
-
-
-* Your header documentation here for translate
 */
 translate = function () 
 {
