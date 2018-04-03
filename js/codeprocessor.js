@@ -5,11 +5,18 @@
  * Last Modified: 03/04/18
  * Version: 1.0.0
  */
-/*
- Your header documentation here for _listen
- *    For your reference...
- * 		event will hold an Event object with the pixels in
- *   	event.detail.data and the timestamp in event.timeStamp
+/* This function interprets data recieved from the camera and turns the flashes into two data arrays: blackWhite and timeTaken
+It does this by first translating the image into greyscale by translating the RGBA data for each pixel. 
+
+argument: event: holds an Event object with the pixels in	event.detail.data and the timestamp in event.timeStampsquare
+
+preconditions: 
+      image must exist as a 400 x 400 pixel array
+      pixel data must be in RGBA format
+returns: 
+      listenData object which contains
+        - blackWhite array : array indicating either white or black as 1 or 0 respectively 
+        - timeTaken array: array indicating the time of each black or white screen
  */
 
 var listenData = 
