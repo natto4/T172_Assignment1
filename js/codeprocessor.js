@@ -1,5 +1,12 @@
-/**
- * Your header documentation here for _listen
+/*
+ * Purpose:
+ * Team: 172 
+ * Authors: Graydon Forbes, Briana Barker, Natalin Lin, Chamil Kaluthanthri
+ * Last Modified: 03/04/18
+ * Version: 1.0.0
+ */
+/*
+ Your header documentation here for _listen
  *    For your reference...
  * 		event will hold an Event object with the pixels in
  *   	event.detail.data and the timestamp in event.timeStamp
