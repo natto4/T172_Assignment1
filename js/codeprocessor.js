@@ -8,7 +8,7 @@
 var listenData = 
 {
   blackWhite: [0],
-  timeTaken: [0],
+  timeTaken: [0]
 };
 var time1 = 0, time2 = 0;
 
@@ -130,6 +130,10 @@ translate = function ()
     if (starCode.charAt(j) === "*")//checking if character j is a star or not
     {
       count++;//adding to the count
+      if (count > 5)
+      { 
+        alert("too many successive taps. Refresh");
+      }
     }
     else//if it is not a star, count will be output to variable number as a series of numbers, denoting the length of each chain of stars
     {
