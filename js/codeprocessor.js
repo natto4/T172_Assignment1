@@ -73,7 +73,8 @@ clear = function ()
 /**
 * Your header documentation here for translate
 */
-translate = function () {
+translate = function () 
+{
   let datatT = listenData.timeTaken;
   let dataunit = datatT[1]; // data unit is the time of 1 tap. The time of one tap is the unit of measurement as 
   // half gap = time of 1 tap, full gap = time of 3 taps. It is taken at the 2nd element of the datatT array as the first element
@@ -81,7 +82,6 @@ translate = function () {
   let databW = listenData.blackWhite;
 
   let i = 1;
-  console.log(dataunit);
   let starCode = "";
   while (i <= datatT.length) 
   {
@@ -91,7 +91,7 @@ translate = function () {
     }
     else if (databW[i] === 0 && datatT[i] > 2 * dataunit) 
     {
-      console.log("fullgap")
+     
       starCode += " ";
       //javascript doesn't work well with floating points so we can't do *3 but instead must do the rounded
       //remainder when divided by the dataunit
@@ -102,7 +102,7 @@ translate = function () {
       if ((i == datatT.length) && (databW[i] == 1)) //if the last element of databW is 1 an early termination alert will show
       {
         alert("Early termination detected. Refresh.");
-        console.log("early termination");
+       
       }
 
       else if (databW[i] == 1) 
@@ -114,9 +114,6 @@ translate = function () {
     i++;
 
   }
-  console.log(listenData.blackWhite)
-  console.log(listenData.timeTaken)
-  console.log(starCode)
 
   // Creating the tap code array
   let array = [["e", "t", "a", "n", "d"], ["o", "i", "r", "u", "c"], ["s", "h", "m", "f", "p"],
