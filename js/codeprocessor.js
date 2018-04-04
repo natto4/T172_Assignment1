@@ -15,8 +15,11 @@ var listenData =
 var time1 = 0, time2 = 0;
 
 /*
-This function interprets data recieved from the camera and turns the flashes into two data arrays: blackWhite and timeTaken
-It does this by first translating the image into greyscale by translating the RGBA data for each pixel. 
+This function interprets data recieved from the camera and turns the flashes into two data arrays: blackWhite and timeTaken.
+It does this by first translating the image into an array of its greyscale equivalent by averaging the RGBA data for each pixel
+as an analogue for brightness. This array is then translated into a binary array based on the level of brightness with 0 = black
+and 1= white. The corresponding timeTaken array is gathered from a comparison between the timestamps of each measurement taken. 
+
 
 argument: event: holds an Event object with the pixels in event.detail.data and the timestamp in event.timeStampsquare
 
