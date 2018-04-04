@@ -1,5 +1,5 @@
 /*
- * Purpose:
+ * Purpose: This file is designed to receive and translate tap codes from an existing sender app into letters. 
  * Team: 172 
  * Authors: Graydon Forbes, Briana Barker, Natalin Lin, Chamil Kaluthanthri
  * Last Modified: 03/04/18
