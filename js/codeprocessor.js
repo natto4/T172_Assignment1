@@ -76,7 +76,7 @@ _listen = function (event)
 This function clears the existing data so that the app can be used multiple times without the need for refreshing the webpage
 
 argument: this function does not take any arguments
-preconditions: none
+preconditions: no preconditions
 postconditions:
       The return must be identical to the initial conditions of listenData
 return: 
@@ -100,7 +100,7 @@ clear = function ()
   rxTranslatedOutput.innerHTML = " ";
 };
 
-/**
+/*
 This function analyses the data gathered from the listen function in order to produce a string of letters translated 
 from the taps and gaps of the transmitted message. It does this by identifying the tap, half-gap and gap time periods as multiples
 of the tap time length. Using these identifiers it creates the corresponding starCode string. The starCode string is then decoded 
@@ -111,8 +111,8 @@ argument: this function does not take any arguments
 preconditions: 
       blackWhite and timeTaken arrays must be of equal type
       array length of timeTaken must be one less than the array length of blackWhite
-      second element in the timeTaken data is the time of a tap and correlates to a 1 in the corresponding blackWhite array.
-/////////postcondition?
+      second element in the timeTaken data is the time of a tap and this correlates to a 1 in the corresponding blackWhite array
+      (necessary for determining the dataunit).
 return:
       variable output is of string type 
       output is the translated encoded message
